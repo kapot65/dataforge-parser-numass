@@ -1,6 +1,6 @@
 use protobuf::Message;
 
-use dataforge::read_df_message;
+use dataforge::read_df_message_sync;
 use numass::{NumassMeta, protos::rsb_event::Point};
 
 fn main() {
@@ -9,7 +9,7 @@ fn main() {
         "./resources/test/2022-point.df"
     ).unwrap();
 
-    let msg = read_df_message::<NumassMeta>(&mut file).unwrap();
+    let msg = read_df_message_sync::<NumassMeta>(&mut file).unwrap();
 
     let point = Point::parse_from_bytes(&msg.data.unwrap()[..]).unwrap();
 
