@@ -17,4 +17,5 @@ dataforge = { git = "https://bitbucket.org/Kapot/dataforge-parser-rust.git", tag
 [build-dependencies]
 protobuf-codegen = "3.2.0"
 
-
+[patch."https://bitbucket.org/Kapot/dataforge-parser-rust.git"]
+dataforge = { path = "../dataforge-parser-rust" }
