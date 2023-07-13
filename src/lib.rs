@@ -1,7 +1,7 @@
 pub mod protos;
 
 use serde_with::{serde_as, DisplayFromStr, PickFirst};
-use std::fmt::Debug;
+use std::{fmt::Debug, path::PathBuf};
 
 use chrono::NaiveDateTime;
 use serde::{Serialize, Deserialize};
@@ -53,6 +53,7 @@ pub enum Command {
     AcquirePoint {
         split: bool,
         acquisition_time: f32,
+        path: Option<PathBuf>,
         external_meta: Option<serde_json::Value>
     }
 }
@@ -95,5 +96,11 @@ pub enum Reply {
         zero_suppression: Option<ZeroSuppressionParams>,
         // split: bool,
         status: ReplyStatus,
+    },
+    #[serde(rename="acquisition_status")]
+    AcquisitionStatus {
+        count: u64,
+        current_time: f32,
+        total_time: f32,
     }
 }
