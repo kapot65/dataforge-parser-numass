@@ -62,10 +62,11 @@ pub enum ReplyStatus {
     Ok
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone, Copy)]
+#[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct ZeroSuppressionParams {
     pub baseline: usize,
-    pub threshold: i16
+    pub threshold: i16,
+    pub fir: Option<Vec<f32>>,
 }
 
 #[serde_as]
