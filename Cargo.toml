@@ -13,10 +13,10 @@ serde_repr = "0.1.9"
 rmp-serde = "1.1.1"
 
 [dev-dependencies]
-dataforge = { git = "https://bitbucket.org/Kapot/dataforge-parser-rust.git", tag = "0.1.3" }
+dataforge = { git = "https://github.com/kapot65/dataforge-parser-rust.git" }
 
 [build-dependencies]
 protobuf-codegen = "3.7.1"
 
-[patch."https://bitbucket.org/Kapot/dataforge-parser-rust.git"]
+[patch."https://github.com/kapot65/dataforge-parser-rust.git"]
 dataforge = { path = "../dataforge-parser-rust" }
