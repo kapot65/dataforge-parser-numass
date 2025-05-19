@@ -66,6 +66,13 @@ pub enum ReplyStatus {
 pub struct ZeroSuppressionParams {
     pub baseline: usize,
     pub threshold: i16,
+    pub th_1: Option<i16>,
+    pub th_2: Option<i16>,
+    pub th_3: Option<i16>,
+    pub th_4: Option<i16>,
+    pub th_5: Option<i16>,
+    pub th_6: Option<i16>,
+    pub th_7: Option<i16>,
     pub fir: Option<Vec<f32>>,
 }
 
